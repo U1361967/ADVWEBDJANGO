@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>To-Do List</title>
+    <title>{% block title %}To-Do List{% endblock %}</title>
     <!-- Loads Path To Static Files -->
     {% load staticfiles %}
     <link rel="stylesheet" type="text/css" href="{% static 'tasks/style.css' %}"/>
@@ -19,13 +19,13 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{% url 'index' %}">To-Do List</a>
+            <a class="navbar-brand" href="{% url 'tasks:index' %}">To-Do List</a>
         </div>
     <!-- Left Nav Bar Items -->
     <div class="collapse navbar-collapse" id="topNavBar">
         <ul class="nav navbar-nav">
             <li class="active">
-                <a href="{% url 'index' %}">
+                <a href="{% url 'tasks:index' %}">
                     <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>&nbsp;Tasks
                 </a>
             </li>
@@ -40,12 +40,12 @@
         </form>
                 <ul class="nav navbar-nav navbar-right">
             <li class="">
-                <a href="{% url 'index' %}">
+                <a href="{% url 'tasks:create_task' %}">
                     <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp;Add New Task
                 </a>
             </li>
             <li class="">
-                <a href="{% url 'index' %}">
+                <a href="{% url 'tasks:index' %}">
                     <span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp;Logout
                 </a>
             </li>

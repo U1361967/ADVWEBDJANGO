@@ -1,5 +1,6 @@
 <!-- Import Template Block -->
 {% extends 'tasks/base.html' %}
+{% block title %}{{ task.title }}{% endblock %}
 
 {%  block body %}
     <h1>{{ task.title }}</h1>

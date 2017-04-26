@@ -1,15 +1,27 @@
-from django.http import Http404
-from django.shortcuts import render
+from django.views import generic
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.core.urlresolvers import reverse_lazy
 from .models import Task
 
-# Create your views here.
-def index(request):
-    all_tasks = Task.objects.all()
-    return render(request, "tasks/index.html", {'all_tasks' : all_tasks})
+class IndexView(generic.ListView):
+    template_name = 'tasks/index.html'
+    context_object_name = "all_tasks"
 
-def detail(request, task_id):
-    try:
-        task = Task.objects.get(id=task_id)
-    except Task.DoesNotExist:
-        raise Http404("Task Does Not Exist")
-    return render(request, "tasks/detail.html", {'task' : task})
+    def get_queryset(self):
+        return Task.objects.all()
+
+class DetailView(generic.DetailView):
+    model = Task
+    template_name = 'tasks/detail.html'
+
+class TaskCreate(CreateView):
+    model = Task
+    fields = ['title', 'description']
+
+class TaskUpdate(UpdateView):
+    model = Task
+    fields = ['title', 'description']
+
+class TaskDelete(DeleteView):
+    mode = Task
+    success_url = reverse_lazy('tasks:index')
