@@ -23,5 +23,5 @@ class TaskUpdate(UpdateView):
     fields = ['title', 'description']
 
 class TaskDelete(DeleteView):
-    mode = Task
+    model = Task
     success_url = reverse_lazy('tasks:index')

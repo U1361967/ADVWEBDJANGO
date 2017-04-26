@@ -4,9 +4,6 @@
     <list default="true" id="f7157269-05db-4505-b45f-1f5dfc0684b6" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tasks/models.py" afterPath="$PROJECT_DIR$/tasks/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tasks/templates/tasks/base.html" afterPath="$PROJECT_DIR$/tasks/templates/tasks/base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tasks/templates/tasks/detail.html" afterPath="$PROJECT_DIR$/tasks/templates/tasks/detail.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tasks/templates/tasks/index.html" afterPath="$PROJECT_DIR$/tasks/templates/tasks/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tasks/urls.py" afterPath="$PROJECT_DIR$/tasks/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tasks/views.py" afterPath="$PROJECT_DIR$/tasks/views.py" />
@@ -24,10 +21,22 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tasks/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="235">
-              <caret line="16" column="29" lean-forward="true" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
+            <state relative-caret-position="252">
+              <caret line="25" column="9" lean-forward="false" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tasks/templates/tasks/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="184">
+              <caret line="11" column="72" lean-forward="true" selection-start-line="11" selection-start-column="72" selection-end-line="11" selection-end-column="72" />
+              <folding>
+                <element signature="n#style#0;n#form#0;n#ul#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -36,8 +45,8 @@
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tasks/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="8" column="10" lean-forward="true" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="15" />
+            <state relative-caret-position="85">
+              <caret line="6" column="53" lean-forward="false" selection-start-line="6" selection-start-column="48" selection-end-line="6" selection-end-column="53" />
               <folding />
             </state>
           </provider>
@@ -71,12 +80,12 @@
         <option value="$PROJECT_DIR$/tasks/admin.py" />
         <option value="$PROJECT_DIR$/tasks/static/tasks/style.css" />
         <option value="$PROJECT_DIR$/tasks/templates/tasks/detail.html" />
-        <option value="$PROJECT_DIR$/tasks/templates/tasks/index.html" />
         <option value="$PROJECT_DIR$/tasks/templates/tasks/tasks_form.html" />
         <option value="$PROJECT_DIR$/tasks/templates/tasks/form_template.html" />
         <option value="$PROJECT_DIR$/tasks/templates/tasks/base.html" />
-        <option value="$PROJECT_DIR$/tasks/urls.py" />
         <option value="$PROJECT_DIR$/tasks/models.py" />
+        <option value="$PROJECT_DIR$/tasks/urls.py" />
+        <option value="$PROJECT_DIR$/tasks/templates/tasks/index.html" />
         <option value="$PROJECT_DIR$/tasks/views.py" />
       </list>
     </option>
@@ -796,7 +805,25 @@
         <state relative-caret-position="136">
           <caret line="8" column="36" lean-forward="false" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
           <folding>
-            <element signature="e#0#28#0" expanded="true" />
+            <element signature="e#0#28#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tasks/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="6" column="53" lean-forward="false" selection-start-line="6" selection-start-column="48" selection-end-line="6" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tasks/templates/tasks/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="11" column="72" lean-forward="true" selection-start-line="11" selection-start-column="72" selection-end-line="11" selection-end-column="72" />
+          <folding>
+            <element signature="n#style#0;n#form#0;n#ul#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -809,26 +836,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tasks/templates/tasks/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="13" lean-forward="true" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tasks/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="8" column="10" lean-forward="true" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tasks/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="16" column="29" lean-forward="true" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
+        <state relative-caret-position="252">
+          <caret line="25" column="9" lean-forward="false" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>
