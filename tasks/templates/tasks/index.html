@@ -9,13 +9,21 @@
             {% for task in all_tasks %}
                 <li><a href="{{ task.id }}">{{ task.title }}</a></li>
                 <!-- Delete Task -->
-                            <form action="{% url 'tasks:delete_task' task.id %}" method="post" style="display: inline;">
-                                {% csrf_token %}
-                                <input type="hidden" name="task_id" value="{{ task.id }}" />
-                                <button type="submit" class="btn btn-default btn-sm">
-                                    <span class="glyphicon glyphicon-trash"></span>
-                                </button>
-                            </form>
+                <form action="{% url 'tasks:delete_task' task.id %}" method="post" style="display: inline;">
+                    {% csrf_token %}
+                    <input type="hidden" name="task_id" value="{{ task.id }}" />
+                    <button type="submit" class="btn btn-default btn-sm">
+                        <span class="glyphicon glyphicon-trash"></span>
+                    </button>
+                </form>
+                <!-- Modify Task -->
+                <form action="{% url 'tasks:update_task' task.id %}" method="get" style="display: inline;">
+                    {% csrf_token %}
+                    <input type="hidden" name="task_id" value="{{ task.id }}" />
+                    <button type="submit" class="btn btn-default btn-sm">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </button>
+                </form>
             {% endfor %}
         </ul>
 
