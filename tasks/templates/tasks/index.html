@@ -2,6 +2,7 @@
 {% load staticfiles %}
 <link rel="stylesheet" type="text/css" href="{% static 'tasks/style.css' %}"/>
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 <html lang="en">
 <head>
@@ -9,6 +10,32 @@
     <title>To-Do List | Tasks</title>
 </head>
 <body>
+
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <!-- Logo -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavBar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{% url 'index' %}">To-Do List</a>
+        </div>
+    <!-- Nav Bar Items -->
+    <div class="collapse navbar-collapse" id="topNavBar">
+        <ul class="nav navbar-nav">
+            <li class="active">
+                <a href="{% url 'index' %}">
+                    <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>&nbsp;Tasks
+                </a>
+            </li>
+
+        </ul>
+    </div>
+    </div>
+</nav>
+
 <h3>Here Are All Your Tasks:</h3>
 {% if all_tasks %}
     <ul>
