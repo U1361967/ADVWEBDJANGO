@@ -1,0 +1,24 @@
+<!-- Loads Path To Static Files -->
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'tasks/style.css' %}"/>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To-Do List | Tasks</title>
+</head>
+<body>
+<h3>Here Are All Your Tasks:</h3>
+{% if all_tasks %}
+    <ul>
+        {% for task in all_tasks %}
+        <li><a href="{{ task.id }}">{{ task.title }}</a></li>
+        {% endfor %}
+    </ul>
+{% else %}
+<h3>No Tasks To Display!</h3>
+{% endif %}
+
+</body>
+</html>
