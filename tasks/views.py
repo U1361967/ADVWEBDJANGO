@@ -12,7 +12,9 @@ class IndexView(generic.ListView):
     context_object_name = "all_tasks"
 
     def get_queryset(self):
-        return Task.objects.all()
+        user = self.request.user.id
+        tasks = Model.objects.filter(foreignkey=user)
+        return tasks
 
 class DetailView(generic.DetailView):
     model = Task
@@ -21,6 +23,13 @@ class DetailView(generic.DetailView):
 class TaskCreate(CreateView):
     model = Task
     fields = ['title', 'description']
+
+    def form_valid(self, form):
+        task = form.save(commit=False)
+        user = self.request.user.id
+        task.user_id = user
+        task.save()
+        return super(TaskCreate, self).form_valid(form)
 
 class TaskUpdate(UpdateView):
     model = Task
