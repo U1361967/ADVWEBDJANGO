@@ -1,9 +1,14 @@
 <!-- Import Template Block -->
 {% extends 'tasks/base.html' %}
-{% block title %}{{ task.title }}{% endblock %}
+{% block title %}{{ task.title }} - {{ task.description }}{% endblock %}
 
 {%  block body %}
     <h1>{{ task.title }}</h1>
     <p>{{ task.description }}</p>
-    <img src="{{ task.task_image.url }}">
+
+    {% if task.task_image %}
+        <img src="{{ task.task_image.url }}">
+    {% else %}
+        <p>No Image Has Been Uploaded For This Task</p>
+    {% endif %}
 {% endblock %}

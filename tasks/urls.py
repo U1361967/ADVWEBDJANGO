@@ -13,7 +13,6 @@ urlpatterns = [
     url(r'^login/$', views.LoginView.as_view(), name="login"), # /login/
     url(r'^logout/$', views.LogoutView.as_view(), name="logout"), # /logout/
     url(r'^search/$', views.SearchList.as_view(), name="search"),  # /search
-    url(r'edit/$', views.TaskUpdate.as_view(), name="searchupdate_task"),  # /tasks/2/
 
 
 ]

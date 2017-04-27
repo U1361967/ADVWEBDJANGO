@@ -3,7 +3,7 @@
 {% block title %}To-Do List{% endblock %}
 
 {%  block body %}
-    <h3>Welcome, {{ users.username }}Here Are All Your Tasks:</h3>
+    <h3>Welcome {{ user.username }}, Here Are All Your Tasks:</h3>
     {% if all_tasks %}
         <ul>
             {% for task in all_tasks %}
