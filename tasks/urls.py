@@ -10,5 +10,7 @@ urlpatterns = [
     url(r'edit/(?P<pk>[0-9]+)/$', views.TaskUpdate.as_view(), name="update_task"),  # /tasks/2/
     url(r'tasks/(?P<pk>[0-9]+)/delete/$', views.TaskDelete.as_view(), name="delete_task"),  # /tasks/2/delete
     url(r'^register/$', views.UserFormView.as_view(), name="register"), # /register/
+    url(r'^login/$', views.LoginView.as_view(), name="login"), # /login/
+    url(r'^logout/$', views.LogoutView.as_view(), name="logout"), # /logout/
 
 ]
