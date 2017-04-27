@@ -46,8 +46,17 @@ class UserFormView(View):
         if form.is_valid():
             user = form.save(commit=False)
             #Cleaned/Normalised Data
-            username = form.cleaned.data['username']
-            password = form.cleaned.data['password']
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password']
             user.set_password(password)
             user.save()
-            
+
+            # Return User Object If Credentials Are Correct
+            user = authenticate(username=username,password=password)
+
+            if user is not None:
+                if user.is_active:
+                    login(request, user)
+                    return redirect('tasks:index')
+
+        return render(request, self.template_name, {'form': form})
