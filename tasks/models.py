@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 class Task(models.Model):
     title = models.CharField(max_length=250)
     description = models.CharField(max_length=500)
+    task_image = models.FileField()
     user_id = models.ForeignKey(User, related_name="user_id")
 
     def get_absolute_url(self):

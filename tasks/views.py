@@ -13,7 +13,7 @@ class IndexView(generic.ListView):
 
     def get_queryset(self):
         user = self.request.user.id
-        tasks = Model.objects.filter(user_id=user)
+        tasks = Task.objects.filter(user_id=user)
         return tasks
 
 class DetailView(generic.DetailView):
@@ -22,7 +22,7 @@ class DetailView(generic.DetailView):
 
 class TaskCreate(CreateView):
     model = Task
-    fields = ['title', 'description']
+    fields = ['title', 'description', 'task_image']
 
     def form_valid(self, form):
         task = form.save(commit=False)
