@@ -5,9 +5,11 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.core.urlresolvers import reverse_lazy
 from .models import Task
-from .forms import UserForm, LoginUserForm
+from .forms import UserForm, LoginUserForm, TaskSearchingForm
+from django.db.models import Q
+from django.contrib.auth.mixins import LoginRequiredMixin
 
-class IndexView(generic.ListView):
+class IndexView(LoginRequiredMixin, generic.ListView):
     template_name = 'tasks/index.html'
     context_object_name = "all_tasks"
 
@@ -16,11 +18,11 @@ class IndexView(generic.ListView):
         tasks = Task.objects.filter(user_id=user)
         return tasks
 
-class DetailView(generic.DetailView):
+class DetailView(LoginRequiredMixin, generic.DetailView):
     model = Task
     template_name = 'tasks/detail.html'
 
-class TaskCreate(CreateView):
+class TaskCreate(LoginRequiredMixin, CreateView):
     model = Task
     fields = ['title', 'description', 'task_image']
 
@@ -31,11 +33,11 @@ class TaskCreate(CreateView):
         task.save()
         return super(TaskCreate, self).form_valid(form)
 
-class TaskUpdate(UpdateView):
+class TaskUpdate(LoginRequiredMixin, UpdateView):
     model = Task
     fields = ['title', 'description']
 
-class TaskDelete(DeleteView):
+class TaskDelete(LoginRequiredMixin, DeleteView):
     model = Task
     success_url = reverse_lazy('tasks:index')
 
@@ -98,3 +100,15 @@ class LogoutView(View):
     def get(self, request):
         logout(request)
         return redirect("tasks:login")
+
+class SearchList(LoginRequiredMixin, generic.ListView):
+    model = Task
+    form_class = TaskSearchingForm
+    template_name = 'tasks/search.html'
+    context_object_name = 'search_results'
+
+    def get_queryset(self):
+        search = self.request.GET.get("q")
+        if search:
+            queryset = Task.objects.filter(Q(title__icontains=search)).distinct
+            return queryset

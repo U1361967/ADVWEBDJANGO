@@ -1,0 +1,27 @@
+<!-- Import Template Block -->
+{% extends 'tasks/base.html' %}
+{% block title %}Search Results{% endblock %}
+
+{%  block body %}
+        <ul>
+            {% for search in search_results %}
+                <li><a href="{% url 'tasks:detail' search.id %}">{{ search.title }}</a></li>
+                <!-- Delete Task -->
+                <form action="{% url 'tasks:delete_task' search.id %}" method="post" style="display: inline;">
+                    {% csrf_token %}
+                    <input type="hidden" name="task_id" value="{{ task.id }}" />
+                    <button type="submit" class="btn btn-default btn-sm">
+                        <span class="glyphicon glyphicon-trash"></span>
+                    </button>
+                </form>
+                <!-- Modify Task -->
+                <form action="{% url 'tasks:update_task' search.id %}" method="get" style="display: inline;">
+                    {% csrf_token %}
+                    <input type="hidden" name="task_id" value="{{ task.id }}" />
+                    <button type="submit" class="btn btn-default btn-sm">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </button>
+                </form>
+            {% endfor %}
+        </ul>
+{%  endblock %}

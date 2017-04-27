@@ -15,3 +15,6 @@ class LoginUserForm(forms.ModelForm):
     class Meta:
         model = User
         fields = ['username', 'password']
+
+class TaskSearchingForm(forms.Form):
+    q = forms.CharField(required=False)
