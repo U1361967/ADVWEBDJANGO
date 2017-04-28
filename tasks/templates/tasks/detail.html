@@ -3,12 +3,15 @@
 {% block title %}{{ task.title }} - {{ task.description }}{% endblock %}
 
 {%  block body %}
-    <h1>{{ task.title }}</h1>
-    <p>{{ task.description }}</p>
+    <div style="margin-left: 10px;">
+        <h1 style="margin-bottom: 0;">{{ task.title }}</h1>
+        <p style="margin-bottom: 20px;">{{ task.description }}</p>
 
-    {% if task.task_image %}
-        <img src="{{ task.task_image.url }}">
-    {% else %}
-        <p>No Image Has Been Uploaded For This Task</p>
-    {% endif %}
+        {% if task.task_image %}
+            <p>Image:</p>
+            <a href="{{ task.task_image.url }}"><img width="500px" src="{{ task.task_image.url }}"></a></div>
+        {% else %}
+            <p>No Image Has Been Uploaded For This Task</p>
+        {% endif %}
+    </div>
 {% endblock %}

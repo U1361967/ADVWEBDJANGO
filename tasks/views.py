@@ -35,7 +35,7 @@ class TaskCreate(LoginRequiredMixin, CreateView):
 
 class TaskUpdate(LoginRequiredMixin, UpdateView):
     model = Task
-    fields = ['title', 'description']
+    fields = ['title', 'description', 'task_image']
 
 class TaskDelete(LoginRequiredMixin, DeleteView):
     model = Task

@@ -1,18 +1,18 @@
 <!-- Import Template Block -->
 {% extends 'tasks/base.html' %}
-{% block title %}To-Do List{% endblock %}
+{% block title %}Tasks{% endblock %}
 
 {%  block body %}
-    <h3>Welcome {{ user.username }}, Here Are All Your Tasks:</h3>
+    <h3 style="margin-left: 10px;">Welcome {{ user.username }}, Here Are All Your Tasks:</h3>
     {% if all_tasks %}
-        <ul>
             {% for task in all_tasks %}
-                <li><a href="{{ task.id }}">{{ task.title }}</a></li>
+        <div style="margin-bottom: 10px; margin-left: 10px;">
+                <p style="margin-bottom: 0;"><a href="{{ task.id }}">{{ task.title }}</a></p>
                 <!-- Delete Task -->
                 <form action="{% url 'tasks:delete_task' task.id %}" method="post" style="display: inline;">
                     {% csrf_token %}
                     <input type="hidden" name="task_id" value="{{ task.id }}" />
-                    <button type="submit" class="btn btn-default btn-sm">
+                    <button type="submit" class="btn btn-danger btn-sm">
                         <span class="glyphicon glyphicon-trash"></span>
                     </button>
                 </form>
@@ -20,12 +20,12 @@
                 <form action="{% url 'tasks:update_task' task.id %}" method="get" style="display: inline;">
                     {% csrf_token %}
                     <input type="hidden" name="task_id" value="{{ task.id }}" />
-                    <button type="submit" class="btn btn-default btn-sm">
+                    <button type="submit" class="btn btn-info btn-sm">
                         <span class="glyphicon glyphicon-pencil"></span>
                     </button>
                 </form>
+        </div>
             {% endfor %}
-        </ul>
 
     {% else %}
     <h3>No Tasks To Display!</h3>

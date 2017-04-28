@@ -1,15 +1,45 @@
-<!-- Import Template Block -->
 {% extends 'tasks/base.html' %}
-{% block title %}Add New Task{% endblock %}
+{% block title %}Add a New Task{% endblock %}
 
-{%  block body %}
-<form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
-{% csrf_token %}
-{% include 'tasks/form_template.html' %}
-<div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" class="btn btn-success">Submit</button>
+{% block body %}
+<div class="container-fluid">
+
+    <div class="row">
+
+        <div class="col-sm-12 col-md-7">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h3>Add a New Album</h3>
+                    {% if error_message %}
+                        <p><strong>{{ error_message }}</strong></p>
+                    {% endif %}
+                    <form class="form-horizontal" role="form" action="" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {% include 'tasks/form_template.html' %}
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-success">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-12 col-md-5">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h3>What is To-Do List?</h3>
+                    <p>To-Do List is an online service that allows you to stay organized, get more done, and see where things stand at a glance.</p>
+                    <h3>How do I add a task?</h3>
+                    <p>First, create a new task by filling out the form on this page. Once an task is created you will be able to view this on the tasks page.</p>
+                    <h3>My image is too small?</h3>
+                    <p>By default we limit all images to a size of 500 x 500 pixels, simply clicking the image will open a new tab showing the full size of the image that has been uploaded.</p>
+                </div>
+            </div>
+        </div>
+
     </div>
+
 </div>
-</form>
 {% endblock %}

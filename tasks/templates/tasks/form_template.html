@@ -1,9 +1,14 @@
+{% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'tasks/style.css' %}"/>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
 {% for field in form %}
     <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
             <span class="text-danger small">{{ field.errors }}</span>
         </div>
-        <label class="control-label col-sm-2" for="song_title">{{ field.label_tag }}</label>
-        <div class="col-sm-10">{{ field }}</div>
+            <label class="control-label col-sm-2">{{ field.label_tag }}</label>
+            <div class="col-sm-10">{{ field }}</div>
     </div>
 {% endfor %}
